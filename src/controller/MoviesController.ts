@@ -21,7 +21,7 @@ export default class MoviesController {
     try {
       const result = await moviesUseCase.favoritesMovies(imdbID);
 
-      return response.status(200).json(result);
+      return response.status(204).send();
     } catch (error) {
       console.error(error);
       return response.status(404).json({ message: "Movie not include" });
